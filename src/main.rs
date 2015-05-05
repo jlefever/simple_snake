@@ -10,10 +10,10 @@ use glutin_window::GlutinWindow as Window;
 use opengl_graphics::{ GlGraphics, OpenGL };
 
 enum Direction {
-	Up,
-	Down,
-	Right,
-	Left
+    Up,
+    Down,
+    Right,
+    Left
 }
 
 pub struct App {
@@ -49,10 +49,10 @@ impl App {
 
     fn update(&mut self, args: &UpdateArgs) {
         match self.dir {
-        	Direction::Up    => self.y -= self.speed * args.dt,
-        	Direction::Down  => self.y += self.speed * args.dt,
-        	Direction::Right => self.x += self.speed * args.dt,
-        	Direction::Left  => self.x -= self.speed * args.dt
+            Direction::Up    => self.y -= self.speed * args.dt,
+            Direction::Down  => self.y += self.speed * args.dt,
+            Direction::Right => self.x += self.speed * args.dt,
+            Direction::Left  => self.x -= self.speed * args.dt
         }
     }
 }
@@ -89,13 +89,13 @@ fn main() {
         }
 
         if let Some(Button::Keyboard(key)) = e.press_args() {
-        	match key {
-        		Key::W => app.dir = Direction::Up,
-        		Key::A => app.dir = Direction::Left,
-        		Key::S => app.dir = Direction::Down,
-        		Key::D => app.dir = Direction::Right,
-        		_ => ()
-        	}
+            match key {
+                Key::W => app.dir = Direction::Up,
+                Key::A => app.dir = Direction::Left,
+                Key::S => app.dir = Direction::Down,
+                Key::D => app.dir = Direction::Right,
+                _ => ()
+            }
         }
     }
 }
