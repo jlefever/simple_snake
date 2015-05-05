@@ -18,7 +18,7 @@ enum Direction {
 
 pub struct App {
     gl: GlGraphics, // OpenGL drawing backend.
-    dir: Direction,   // Direction for the square.
+    dir: Direction, // Direction for the square.
     speed: f64,
     x: f64,
     y: f64
@@ -31,19 +31,18 @@ impl App {
         const GREEN: [f32; 4] = [0.0, 1.0, 0.0, 1.0];
         const RED:   [f32; 4] = [1.0, 0.0, 0.0, 1.0];
 
-        let square = rectangle::square(0.0, 0.0, 10.0);
-        let x = self.x;
-        let y = self.y;
-        //let (x, y) = ((args.width / 2) as f64, (args.height / 2) as f64);
+        let mut square = [(args.width / 2) as f64, (args.height / 2) as f64, 10.0, 10.0];
+        let (x, y) = (self.x, self.y);
 
         self.gl.draw(args.viewport(), |c, gl| {
             // Clear the screen.
             clear(GREEN, gl);
 
-            let transform = c.transform.trans(x, y);
+            square[0] = x;
+            square[1] = y;
 
             // Draw a box rotating around the middle of the screen.
-            rectangle(RED, square, transform, gl);
+            rectangle(RED, square, c.transform, gl);
         });
     }
 
