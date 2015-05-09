@@ -6,6 +6,7 @@ dependencies = [
  "piston2d-graphics 0.0.45 (git+https://github.com/PistonDevelopers/graphics.git)",
  "piston2d-opengl_graphics 0.0.16 (git+https://github.com/PistonDevelopers/opengl_graphics.git)",
  "pistoncore-glutin_window 0.0.8 (git+https://github.com/PistonDevelopers/glutin_window.git)",
+ "rand 0.3.8 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
